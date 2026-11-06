@@ -1,7 +1,7 @@
 {
   "name": "live-coding-boiler-plate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Solução do desafio técnico API Menu, implementada sobre o boilerplate fornecido pela empresa Paketa Crédito.",
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/paketacredito/live-coding-boiler-plate.git"
   },
-  "author": "",
+  "author": "Denise Maria Leandro de Castro",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/paketacredito/live-coding-boiler-plate/issues"

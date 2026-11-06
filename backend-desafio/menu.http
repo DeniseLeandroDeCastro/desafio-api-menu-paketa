@@ -1,0 +1,85 @@
+### Cadastrar LCD como subitem de Televisores
+POST http://localhost:8000/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": "LCD",
+  "relatedId": 2
+}
+
+
+### Consultar menu completo
+GET http://localhost:8000/api/v1/menu
+
+
+### Testar cadastro de nome duplicado
+POST http://localhost:8000/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": "Eletrodomésticos"
+}
+
+### Excluir item do menu
+DELETE http://localhost:8000/api/v1/menu/4
+
+### Cadastrar menu para teste de exclusão em cascata
+POST http://localhost:8000/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": "Menu para teste de exclusão"
+}
+
+### Cadastrar subitem para teste de exclusão em cascata
+POST http://localhost:8000/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": "Submenu para teste de exclusão",
+  "relatedId": 6
+}
+
+### Cadastrar terceiro nível para teste de exclusão
+POST http://localhost:8000/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": "Item para teste de exclusão",
+  "relatedId": 7
+}
+
+### Testar exclusão em cascata
+DELETE http://localhost:8000/api/v1/menu/6
+
+### Testar exclusão de item inexistente
+DELETE http://localhost:8000/api/v1/menu/9999
+
+### Testar cadastro sem nome
+POST http://localhost:8000/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+### Testar cadastro com menu relacionado inexistente
+POST http://localhost:8000/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": "Subitem com menu inexistente",
+  "relatedId": 9999
+}
+
+### Testar cadastro com identificador inválido
+POST http://localhost:8000/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": "Subitem com identificador inválido",
+  "relatedId": "abc"
+}
+
+### Testar exclusão com identificador inválido
+DELETE http://localhost:8000/api/v1/menu/abc
